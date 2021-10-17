@@ -1,0 +1,133 @@
+{
+  "event": {
+    "type": "comedy",
+    "id": 5523982,
+    "datetime_utc": "2021-10-17T04:30:00",
+    "venue": {
+      "state": "CA",
+      "name_v2": "San Jose Improv",
+      "postal_code": "95113",
+      "name": "San Jose Improv",
+      "links": [],
+      "timezone": "America/Los_Angeles",
+      "url": "https://seatgeek.com/venues/san-jose-improv-1/tickets",
+      "score": 0.65,
+      "location": {
+        "lat": 37.3356,
+        "lon": -121.888
+      },
+      "address": "62 S. Second Street",
+      "country": "US",
+      "has_upcoming_events": true,
+      "num_upcoming_events": 27,
+      "city": "San Jose",
+      "slug": "san-jose-improv-1",
+      "extended_address": "San Jose, CA 95113",
+      "id": 409873,
+      "popularity": 0,
+      "access_method": null,
+      "metro_code": 807,
+      "capacity": 0,
+      "display_location": "San Jose, CA"
+    },
+    "datetime_tbd": false,
+    "performers": [
+      {
+        "type": "theater_comedy",
+        "name": "T.J. Miller\t",
+        "image": "https://seatgeek.com/images/performers-landscape/t-j-miller-e02057/15789/huge.jpg",
+        "id": 15789,
+        "images": {
+          "huge": "https://seatgeek.com/images/performers-landscape/t-j-miller-e02057/15789/huge.jpg"
+        },
+        "divisions": null,
+        "has_upcoming_events": true,
+        "primary": true,
+        "stats": {
+          "event_count": 14
+        },
+        "taxonomies": [
+          {
+            "id": 3000000,
+            "name": "theater",
+            "parent_id": null,
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "rank": 10
+          },
+          {
+            "id": 3040000,
+            "name": "comedy",
+            "parent_id": 3000000,
+            "document_source": {
+              "source_type": "ELASTIC",
+              "generation_type": "FULL"
+            },
+            "rank": 11
+          }
+        ],
+        "image_attribution": "FilmMagic / FilmMagic / Getty Images",
+        "url": "https://seatgeek.com/t-j-miller-tickets",
+        "score": 0.42,
+        "slug": "t-j-miller",
+        "home_venue_id": null,
+        "short_name": "T.J. Miller\t",
+        "num_upcoming_events": 14,
+        "colors": null,
+        "image_license": "rightsmanaged",
+        "popularity": 0,
+        "location": null
+      }
+    ],
+    "is_open": false,
+    "links": [],
+    "datetime_local": "2021-10-16T21:30:00",
+    "time_tbd": false,
+    "short_title": "T.J. Miller",
+    "visible_until_utc": "2021-10-17T08:30:00",
+    "stats": {
+      "listing_count": null,
+      "average_price": null,
+      "lowest_price_good_deals": null,
+      "lowest_price": null,
+      "highest_price": null,
+      "visible_listing_count": null,
+      "dq_bucket_counts": null,
+      "median_price": null,
+      "lowest_sg_base_price": null,
+      "lowest_sg_base_price_good_deals": null
+    },
+    "taxonomies": [
+      {
+        "id": 3000000,
+        "name": "theater",
+        "parent_id": null,
+        "rank": 10
+      },
+      {
+        "id": 3040000,
+        "name": "comedy",
+        "parent_id": 3000000,
+        "rank": 11
+      }
+    ],
+    "url": "https://seatgeek.com/t-j-miller-tickets/comedy/2021-10-16-9-30-pm/5523982",
+    "score": 0.431,
+    "announce_date": "2021-10-14T00:00:00",
+    "created_at": "2021-10-14T16:02:21",
+    "date_tbd": false,
+    "title": "T.J. Miller",
+    "popularity": 0.552,
+    "description": "",
+    "status": "normal",
+    "access_method": null,
+    "event_promotion": null,
+    "announcements": {},
+    "conditional": false,
+    "enddatetime_utc": null,
+    "themes": [],
+    "domain_information": []
+  }
+}

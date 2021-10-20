@@ -2,12 +2,13 @@ import Header from '../app/Header';
 import EventListItem from './EventListItem';
 
 export default function EventList({ eventsData }) {
+  const { events } = eventsData;
   return (
     <div>
       <Header title="Events" />
       <div className="pl-10">
         <ul>
-          {eventsData.events.map((event) => (
+          {events.map((event) => (
             <li key={event.id}>
               <EventListItem event={event} />
             </li>

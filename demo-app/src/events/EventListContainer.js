@@ -1,23 +1,9 @@
-import { useEffect, useState } from 'react';
-
-import { apiClient } from '../apiClient';
 import Loading from '../app/Loading';
 import EventList from './EventList';
+import { useFetchEvents } from './EventList.hooks';
 
 export default function EventListContainer() {
-  const [eventsData, setEventsData] = useState({
-    meta: { total: '-' },
-    events: [],
-    loading: true,
-  });
+  const events = useFetchEvents();
 
-  useEffect(() => {
-    apiClient.get('/events').then(({ data }) => setEventsData(data));
-  }, []);
-
-  return eventsData.loading ? (
-    <Loading />
-  ) : (
-    <EventList eventsData={eventsData} />
-  );
+  return !events?.loading ? <EventList eventsData={events} /> : <Loading />;
 }

@@ -1,9 +1,15 @@
+import { useParams } from 'react-router';
 import Loading from '../app/Loading';
+import { useGetEvent } from './context-hooks';
 import EventDetails from './EventDetails';
-import { useFetchEvent } from './EventList.hooks';
 
 export default function EventDetailsContainer() {
-  const event = useFetchEvent();
+  const { id } = useParams();
+  const eventData = useGetEvent(id);
 
-  return !event?.loading ? <EventDetails event={event} /> : <Loading />;
+  return !eventData?.loading ? (
+    <EventDetails event={eventData.event} />
+  ) : (
+    <Loading />
+  );
 }

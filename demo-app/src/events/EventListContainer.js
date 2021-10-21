@@ -1,9 +1,9 @@
 import Loading from '../app/Loading';
 import EventList from './EventList';
-import { useFetchEvents } from './EventList.hooks';
+import { useGetEvents } from './context-hooks';
 
 export default function EventListContainer() {
-  const events = useFetchEvents();
+  const events = useGetEvents();
 
   return !events?.loading ? <EventList eventsData={events} /> : <Loading />;
 }

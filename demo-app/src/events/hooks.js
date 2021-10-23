@@ -2,21 +2,25 @@ import { useEffect, useState } from 'react';
 import { fetchEvent, fetchEvents } from './api-requests';
 
 export function useFetchEvents() {
-  const [events, setEvents] = useState({ loading: true });
+  const [eventsData, setEventsData] = useState({ loading: true });
 
   useEffect(() => {
-    fetchEvents().then(({ data }) => setEvents({ ...data, loading: false }));
+    fetchEvents().then(({ data }) =>
+      setEventsData({ ...data, loading: false })
+    );
   }, []);
 
-  return events;
+  return eventsData;
 }
 
 export function useFetchEvent(id) {
-  const [event, setEvent] = useState({ loading: true });
+  const [eventData, setEventData] = useState({ loading: true });
 
   useEffect(() => {
-    fetchEvent(id).then(({ data }) => setEvent({ ...data, loading: false }));
+    fetchEvent(id).then(({ data }) =>
+      setEventData({ event: data, loading: false })
+    );
   }, [id]);
 
-  return event;
+  return eventData;
 }

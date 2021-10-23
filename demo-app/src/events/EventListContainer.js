@@ -1,9 +1,9 @@
 import Loading from '../app/Loading';
 import EventList from './EventList';
-import { useGetEvents } from './redux-hooks';
+import { useFetchEvents } from './hooks';
 
 export default function EventListContainer() {
-  const events = useGetEvents();
+  const events = useFetchEvents();
 
   return !events?.loading ? <EventList eventsData={events} /> : <Loading />;
 }

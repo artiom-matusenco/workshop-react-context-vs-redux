@@ -31,8 +31,5 @@ export function useGetEvent(id) {
     }
   }, []);
 
-  return {
-    event,
-    loading,
-  };
+  return { event, loading };
 }

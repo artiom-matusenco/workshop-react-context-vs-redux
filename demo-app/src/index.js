@@ -4,13 +4,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './app/App';
 import reportWebVitals from './reportWebVitals';
-import { ReduxProvider } from './redux/ReduxProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ReduxProvider>
-      <App />
-    </ReduxProvider>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

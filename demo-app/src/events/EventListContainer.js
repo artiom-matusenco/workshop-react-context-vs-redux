@@ -1,6 +1,6 @@
 import Loading from '../app/Loading';
 import EventList from './EventList';
-import { useGetEvents } from './context-hooks';
+import { useGetEvents } from './redux-hooks';
 
 export default function EventListContainer() {
   const events = useGetEvents();

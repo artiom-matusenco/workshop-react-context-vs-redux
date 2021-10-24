@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/moon.css" />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section
+            data-background-image="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2340&q=80"
+          >
+            <h2>React State Management</h2>
+            <h1>Context vs Redux</h1>
+          </section>
+          <section>
+            <h2>Disclaimer</h2>
+            <blockquote class="text-left">
+              <p>Are Context and Redux the same thing?</p>
+              <p>
+                No. They are different tools that do different things, and you
+                use them for different purposes.
+              </p>
+            </blockquote>
+            <div class="text-left leading-6 w-2/3 m-auto">
+              <p class="text-3xl">by Mark Erikson</p>
+              <a
+                href="https://blog.isquaredsoftware.com/2021/01/context-redux-differences/"
+                class="text-2xl"
+              >
+                "Why React Context is Not a "State Management" Tool (and Why It
+                Doesn't Replace Redux)"
+              </a>
+            </div>
+            <aside class="notes">
+              <p>Забегая на перед сразу хочу сказать...</p>
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <div class="flex justify-center">
+            <img
+              src="https://avatars.githubusercontent.com/u/10349383"
+              alt="Artiom Matusenco"
+              class="rounded-full"
+            />
+          </div>
+          <h3>Artiom Matusenco</h3>
+          <p class="text-3xl">
+            JavaScript Team Lead at Lohika / Capgemini Engineering
+          </p>
+          <p class="text-2xl">
+            6+ years of experience in building scalable WEB solutions for
+            various industries.
+          </p>
+        </section>
+
+        <section>
+          <section>
+            <h2>Application State Management Overview</h2>
+          </section>
+          <section>
+            <h2>
+              <p>What’s State Management</p>
+              <p>in a Nutshell?</p>
+            </h2>
+            <blockquote class="text-left">
+              <p>
+                State management is simply a way to engender communication and
+                sharing of data across components.
+              </p>
+              <p>
+                It creates a concrete data structure to represent your app's
+                State that you can read and write.
+              </p>
+            </blockquote>
+            <div class="text-left leading-6 w-2/3 m-auto">
+              <p class="text-3xl">by Mihaela @ WorksHub</p>
+              <a
+                href="https://dev.to/workshub/state-management-battle-in-react-2021-hooks-redux-and-recoil-2am0"
+                class="text-2xl"
+              >
+                State Management Battle in React 2021: Hooks, Redux, and Recoil
+              </a>
+            </div>
+            <aside class="notes">
+              <h4>Состояние приложения позволяет</h4>
+              <ul>
+                <li>распределять данные среди компонентов приложения</li>
+                <li>построить общение между компонентам</li>
+              </ul>
+              <p>
+                В итоге это управление распределением данных среди компонентов
+                приложения а так же управление общением компонентв друг с другом
+              </p>
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <h2>Demo-Application Overview</h2>
+        </section>
+
+        <section>
+          <section>
+            <h2>Context API and Hooks</h2>
+          </section>
+
+          <section class="text-left">
+            <h2>What is the Redux Context?</h2>
+            <p>
+              <b class="text-gray-400">Context </b>is a dependency injection
+              mechanism. Any value put in Context is available implicitly for
+              downstream components.
+            </p>
+          </section>
+          <section class="text-left">
+            <h2>So how to build State Management using React Context?</h2>
+            <p>
+              The composition of
+              <i class="italic text-gray-400">useReducer</i> and
+              <i class="italic text-gray-400">useContext</i> hooks together
+              allows to implement a simple state management system which is more
+              equivalent to what Redux does with React.
+            </p>
+          </section>
+          <section>
+            <h2>Context API</h2>
+            <div class="text-left">
+              <div class="pl-10">React.createContext</div>
+              <pre>
+                <code data-trim data-noescape data-line-numbers>
+                  const MyContext = React.createContext(defaultValue);
+                </code>
+              </pre>
+
+              <div class="pl-10">Context.Provider</div>
+              <pre>
+                <code data-trim data-noescape data-line-numbers>
+                  <script type="text/template"> 
+                    <MyContext.Provider value={value}>
+                      <App />
+                    </MyContext.Provider>
+                  </script>
+                </code>
+              </pre>
+
+              <div class="pl-10">useContext</div>
+              <pre>
+                <code data-trim data-noescape data-line-numbers>
+                  <script type="text/template"> 
+                    function App() {
+                      const value = useContext(MyContext);
+                      return (
+                        <h1>MyContext value: {value}</h1>
+                      );
+                    }
+                  </script>
+                </code>
+              </pre>
+            </div>
+          </section>
+          <section>
+            <h2>State Management</h2>
+            <div class="text-left pl-10">useReducer</div>
+            <pre>
+                <code data-trim data-noescape data-line-numbers>
+                  <script type="text/template"> 
+                    const reducer = (state, action) = {
+                        switch(action.type) {
+                          case "SOME_ACTION":
+                            return {
+                              ...state,
+                              someField: action.payload
+                            }
+                        }
+                    }
+
+                    const [state, dispatch] = useReducer(reducer, initialState);
+                    ...
+                    <MyContext.Provider value={{state, dispatch}}>
+                      <App />
+                    </MyContext.Provider>
+                  </script>
+                </code>
+              </pre>
+          </section>
+        </section>
+
+        <section>
+          <section>Redux</section>
+          <section>
+            How to think about Redux So the way I would distinguish it is: Redux
+            is a very generic state management tool that can be used for a broad
+            array of use cases. Caching state from a server UI state other
+            complex data management on the client
+          </section>
+        </section>
+
+        <section>
+          <section>Conclusions</section>
+          <section>
+            If you're only using Redux to avoid passing down props, context
+            could replace Redux - but then you probably didn't need Redux in the
+            first place.
+            <div>
+              Context also doesn't give you anything like the Redux DevTools,
+              the ability to trace your state updates, middleware to add
+              centralized application logic, and other powerful capabilities
+              that Redux enables.
+            </div>
+            <div>
+              It's also worth noting that context is just a mechanism for making
+              a value available to a nested subtree of components, and it's not
+              a state management approach in and of itself
+            </div>
+            <div>
+              many excellent reasons to choose Redux: Consistent architectural
+              patterns Debugging capabilities Middleware Addons and
+              extensibility Cross-platform and cross-framework usage Depending
+              on your app's setup, much better performance than working with
+              just Context
+            </div>
+          </section>
+          <section>
+            <p class="text-5xl text-gray-400 text-left">
+              Redux is most useful when in cases when:
+            </p>
+            <ul class="text-left">
+              <li>
+                You have large amounts of application state that are needed in
+                many places in the app
+              </li>
+              <li>The app state is updated frequently</li>
+              <li>The logic to update that state may be complex</li>
+              <li>
+                The app has a medium or large-sized codebase, and might be
+                worked on by many people
+              </li>
+              <li>You need to see how that state is being updated over time</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h2>THANK YOU!</h2>
+          <h3>Artiom Matusenco</h3>
+
+          <div>
+            <b>LinkedIn: </b
+            ><a href="https://www.linkedin.com/in/artiom-matusenco/"
+              >artiom-matusenco</a
+            >
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>

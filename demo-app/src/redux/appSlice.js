@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { initialState } from './initialState';
+
 export const appSlice = createSlice({
   name: 'app',
   devTools: true,

@@ -256,7 +256,7 @@
             <pre>
                 <code data-trim data-noescape data-line-numbers>
                   <script type="text/template"> 
-                    import { configureStore } from '@reduxjs/toolkit'
+                    import { configureStore } from '@reduxjs/toolkit';
 
                     export const store = configureStore({
                       reducer,
@@ -272,18 +272,18 @@
             <pre>
                 <code data-trim data-noescape data-line-numbers>
                   <script type="text/template"> 
-                    import { createSlice } from '@reduxjs/toolkit'
+                    import { createSlice } from '@reduxjs/toolkit';
 
                     export const counterSlice = createSlice({
                       name: 'counter',
                       initialState,
                       reducers: {
                         increment: (state) => {
-                          state.value += 1
+                          state.value += 1;
                         },
                         ...
                       },
-                    })
+                    });
 
                     export const {increment} = counterSlice.actions;
                     export const {reducer} = counterSlice;
@@ -295,29 +295,32 @@
         </section>
 
         <section>
-          <section>Conclusions</section>
           <section>
-            If you're only using Redux to avoid passing down props, context
-            could replace Redux - but then you probably didn't need Redux in the
-            first place.
-            <div>
-              Context also doesn't give you anything like the Redux DevTools,
-              the ability to trace your state updates, middleware to add
-              centralized application logic, and other powerful capabilities
-              that Redux enables.
-            </div>
-            <div>
-              It's also worth noting that context is just a mechanism for making
-              a value available to a nested subtree of components, and it's not
-              a state management approach in and of itself
-            </div>
-            <div>
-              many excellent reasons to choose Redux: Consistent architectural
-              patterns Debugging capabilities Middleware Addons and
-              extensibility Cross-platform and cross-framework usage Depending
-              on your app's setup, much better performance than working with
-              just Context
-            </div>
+            <h1>Conclusions</h1>
+          </section>
+          <section>
+            <blockquote>
+              If you're only using Redux to avoid passing down props, context
+              could replace Redux - but then you probably didn't need Redux in
+              the first place.
+            </blockquote>
+          </section>
+          <section>
+            <p class="text-5xl text-gray-400 text-left">
+              There are many excellent reasons to choose Redux:
+            </p>
+
+            <ul>
+              <li>Consistent architectural patterns</li>
+              <li>Debugging capabilities</li>
+              <li>Middleware</li>
+              <li>Addons and extensibility</li>
+              <li>Cross-platform and cross-framework usage</li>
+              <li>
+                Depending on your app's setup, much better performance than
+                working with just Context
+              </li>
+            </ul>
           </section>
           <section>
             <p class="text-5xl text-gray-400 text-left">

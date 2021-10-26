@@ -18,11 +18,12 @@ export function useGetEvents() {
 }
 
 export function useGetEvent(id) {
+  const dispatch = useDispatch();
+
   const loading = useSelector((state) => state.events.loading);
   const event = useSelector((state) => {
     return state.events.events.find((i) => i.id === id);
   });
-  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!event) {

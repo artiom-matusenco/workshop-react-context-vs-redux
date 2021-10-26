@@ -24,6 +24,7 @@ export function useGetEvent(id) {
   const { appState, dispatch } = useContext(AppContext);
   const { events } = appState;
 
+  const { loading } = events;
   const event = events.events.find((e) => e.id === id);
 
   useEffect(() => {
@@ -35,8 +36,5 @@ export function useGetEvent(id) {
     }
   }, []);
 
-  return {
-    event,
-    loading: events.loading,
-  };
+  return { event, loading };
 }

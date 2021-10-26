@@ -7,7 +7,9 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
 
-    <title>reveal.js</title>
+    <title>
+      "React State Management: Context vs Redux" by Artiom Matusenco
+    </title>
 
     <link rel="stylesheet" href="dist/reset.css" />
     <link rel="stylesheet" href="dist/reveal.css" />
@@ -33,8 +35,9 @@
           <section>
             <h2>Disclaimer</h2>
             <blockquote class="text-left">
-              <p>Are Context and Redux the same thing?</p>
+              <p><b>Q:</b> Are Context and Redux the same thing?</p>
               <p>
+                <b>A:</b>
                 No. They are different tools that do different things, and you
                 use them for different purposes.
               </p>
@@ -71,11 +74,17 @@
             6+ years of experience in building scalable WEB solutions for
             various industries.
           </p>
+          <p class="text-2xl">
+            <b>LinkedIn: </b
+            ><a href="https://www.linkedin.com/in/artiom-matusenco/"
+              >artiom-matusenco</a
+            >
+          </p>
         </section>
 
         <section>
           <section>
-            <h2>Application State Management Overview</h2>
+            <h1>Application State Management</h1>
           </section>
           <section>
             <h2>
@@ -116,30 +125,20 @@
         </section>
 
         <section>
-          <h2>Demo-Application Overview</h2>
+          <h1>Demo-Application</h1>
         </section>
 
         <section>
           <section>
-            <h2>Context API and Hooks</h2>
+            <h1>Context API and Hooks</h1>
           </section>
 
           <section class="text-left">
-            <h2>What is the Redux Context?</h2>
+            <h2>What is the React Context?</h2>
             <p>
               <b class="text-gray-400">Context </b>is a dependency injection
               mechanism. Any value put in Context is available implicitly for
               downstream components.
-            </p>
-          </section>
-          <section class="text-left">
-            <h2>So how to build State Management using React Context?</h2>
-            <p>
-              The composition of
-              <i class="italic text-gray-400">useReducer</i> and
-              <i class="italic text-gray-400">useContext</i> hooks together
-              allows to implement a simple state management system which is more
-              equivalent to what Redux does with React.
             </p>
           </section>
           <section>
@@ -178,6 +177,16 @@
               </pre>
             </div>
           </section>
+          <section class="text-left">
+            <h2>So how to build State Management using React Context?</h2>
+            <p>
+              The composition of
+              <i class="italic text-gray-400">useReducer</i> and
+              <i class="italic text-gray-400">useContext</i> hooks together
+              allows to implement a simple state management system which is more
+              equivalent to what Redux does with React.
+            </p>
+          </section>
           <section>
             <h2>State Management</h2>
             <div class="text-left pl-10">useReducer</div>
@@ -206,12 +215,82 @@
         </section>
 
         <section>
-          <section>Redux</section>
           <section>
-            How to think about Redux So the way I would distinguish it is: Redux
-            is a very generic state management tool that can be used for a broad
-            array of use cases. Caching state from a server UI state other
-            complex data management on the client
+            <h1>Redux</h1>
+          </section>
+          <section>
+            <blockquote class="text-left">
+              <b>How to think about Redux</b>
+              <p>
+                So the way I would distinguish it is: Redux is a very generic
+                state management tool that can be used for a broad array of use
+                cases. Caching state from a server UI state other complex data
+                management on the client
+              </p>
+            </blockquote>
+            <div class="text-right leading-6 w-4/5 m-auto">
+              <p class="text-3xl">by Mark Erikson</p>
+              <a
+                href="https://changelog.com/posts/when-and-when-not-to-reach-for-redux"
+                class="text-2xl"
+              >
+                "When (and when not) to reach for Redux"
+              </a>
+            </div>
+          </section>
+          <section>
+            <h2>API Overview</h2>
+            <div class="text-left pl-10">Provider</div>
+            <pre>
+                <code data-trim data-noescape data-line-numbers>
+                  <script type="text/template"> 
+                    import { Provider } from 'react-redux';
+                    ...
+                    <Provider store={store}>
+                      <App />
+                    </Provider>
+                  </script>
+                </code>
+              </pre>
+            <div class="text-left pl-10">Store</div>
+            <pre>
+                <code data-trim data-noescape data-line-numbers>
+                  <script type="text/template"> 
+                    import { configureStore } from '@reduxjs/toolkit'
+
+                    export const store = configureStore({
+                      reducer,
+                    })
+                  </script>
+                </code>
+              </pre>
+          </section>
+
+          <section>
+            <h2>API OVERVIEW</h2>
+            <div class="text-left pl-10">Redux State Slice</div>
+            <pre>
+                <code data-trim data-noescape data-line-numbers>
+                  <script type="text/template"> 
+                    import { createSlice } from '@reduxjs/toolkit'
+
+                    export const counterSlice = createSlice({
+                      name: 'counter',
+                      initialState,
+                      reducers: {
+                        increment: (state) => {
+                          state.value += 1
+                        },
+                        ...
+                      },
+                    })
+
+                    export const {increment} = counterSlice.actions;
+                    export const {reducer} = counterSlice;
+                  </script>
+
+                </code>
+              </pre>
           </section>
         </section>
 
@@ -261,15 +340,17 @@
         </section>
 
         <section>
-          <h2>THANK YOU!</h2>
-          <h3>Artiom Matusenco</h3>
+          <h1>Q&A</h1>
+        </section>
 
-          <div>
-            <b>LinkedIn: </b
-            ><a href="https://www.linkedin.com/in/artiom-matusenco/"
-              >artiom-matusenco</a
-            >
+        <section>
+          <div class="flex justify-center">
+            <img
+              src="./assets/qrcode_artiom-matusenco.github.io.png"
+              alt="Presentation QR Code"
+            />
           </div>
+          <h1>THANK YOU!</h1>
         </section>
       </div>
     </div>

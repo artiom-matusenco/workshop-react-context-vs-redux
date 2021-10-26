@@ -24,7 +24,7 @@ export function useGetEvent(id) {
   const { appState, dispatch } = useContext(AppContext);
   const { events } = appState;
 
-  const event = getEvent(events, id);
+  const event = events.events.find((e) => e.id === id);
 
   useEffect(() => {
     if (!event) {

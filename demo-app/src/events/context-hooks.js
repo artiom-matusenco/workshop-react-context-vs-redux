@@ -2,7 +2,6 @@ import { useContext, useEffect } from 'react';
 import { appActions } from '../context/appActions';
 import { AppContext } from '../context/AppContext';
 import { fetchEvent, fetchEvents } from './api-requests';
-import { getEvent } from './selector';
 
 export function useGetEvents() {
   const { appState, dispatch } = useContext(AppContext);

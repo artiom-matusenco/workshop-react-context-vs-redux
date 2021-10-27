@@ -212,6 +212,34 @@
                 </code>
               </pre>
           </section>
+          <section>
+            <h2>State Management</h2>
+            <div class="text-left pl-10">useContext</div>
+            <pre>
+                <code data-trim data-noescape data-line-numbers>
+                  <script type="text/template"> 
+                    function MyComponent() {
+                      const [state, dispatch] = useContext(MyContext);
+
+                      useEffect(() => {
+                        dispatch({
+                          type: "MY_ACTION", 
+                          payload: {value: 'some_payload'},
+                        });
+                      }, []);
+
+                      return (
+                        <div> Current value: {state.value} </div>
+                      );
+                    }
+                  </script>
+                </code>
+              </pre>
+          </section>
+          <section>
+            <h2>Debugging</h2>
+            <div>Writing useLogger()</div>
+          </section>
         </section>
 
         <section>
@@ -292,18 +320,18 @@
                 </code>
               </pre>
           </section>
+          <section>
+            <h2>Redux Middleware</h2>
+            <div>Writing thunks</div>
+          </section>
+          <section>
+            <h2>Redux DevTools</h2>
+          </section>
         </section>
 
         <section>
           <section>
             <h1>Conclusions</h1>
-          </section>
-          <section>
-            <blockquote>
-              If you're only using Redux to avoid passing down props, context
-              could replace Redux - but then you probably didn't need Redux in
-              the first place.
-            </blockquote>
           </section>
           <section>
             <p class="text-5xl text-gray-400 text-left">
@@ -339,6 +367,19 @@
               </li>
               <li>You need to see how that state is being updated over time</li>
             </ul>
+          </section>
+          <section>
+            <h2>When to use Context API?</h2>
+          </section>
+          <section>
+            <blockquote>
+              If you're only using Redux to avoid passing down props, context
+              could replace Redux - but then you probably didn't need Redux in
+              the first place.
+            </blockquote>
+            <div class="text-left leading-6 w-2/3 m-auto">
+              <p class="text-3xl">by Mark Erikson</p>
+            </div>
           </section>
         </section>
 
